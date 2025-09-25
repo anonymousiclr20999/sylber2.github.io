@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Sylber 2.0: A Universal Syllable Embedding">
+  <meta name="keywords" content="syllable embedding, speech synthesis, speech compression">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sylber 2.0: A Universal Syllable Embedding</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Sylber 2.0: A Universal Syllable Embedding</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous authors
+            </span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="./static/images/system-overview.png" alt="System Overview Diagram" style="width: 50%; height: auto; margin: 10px 0;">
+</div>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Scaling spoken language modeling requires speech tokens that are both efficient and universal. Recent work has proposed syllables as promising speech tokens at low temporal resolution, but existing models are constrained to English and fail to capture sufficient acoustic detail. To address this, we present Sylber 2.0, a universal framework for coding speech at the syllable level, enabling efficient temporal compression and high-fidelity reconstruction across multiple languages and expressive styles. Building on the original Sylber, Sylber 2.0 improves both linguistic coverage and reconstruction quality by training on diverse multilingual speech and introducing an acoustic encoder and vocoder. Sylber 2.0 achieves a very low token frequency around 5 Hz, while retaining both linguistic and acoustic detail. Experiments show that it performs on par with previous models operating on high-frequency baselines, and it outperforms the original Sylber by a significant margin. We further demonstrate the efficacy of Sylber 2.0 by training a text-to-speech model, which achieves comparable or better performance than current SOTA models using only 560 hours of data and 72M parameters. In sum, we establish an effective syllable-level abstraction for general spoken language. </p>
+        </div>
+      </div>
+    </div>
+      </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Sylber 2.0 Resynthesis</h2>
+    
+    <style>
+      .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 40px 0;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+    
+      .styled-table caption {
+        caption-side: bottom;
+        padding-top: 8px;
+        font-style: italic;
+      }
+    
+      .styled-table th,
+      .styled-table td {
+        border: 1px solid #ccc;
+        padding: 10px 12px;
+        text-align: center;
+      }
+    
+      .styled-table th[rowspan],
+      .styled-table td[rowspan] {
+        vertical-align: middle;
+      }
+    
+      .styled-table th {
+        background-color: #f2f2f2;
+      }
+    
+      .styled-table td:first-child,
+      .styled-table th:first-child {
+        text-align: left;
+      }
+    </style>
+
+    
+
+    <div class="table-container" style="overflow-x: auto;">
+      <table class="table is-fullwidth is-striped is-hoverable has-text-centered">
+        <thead>
+          <tr>
+            <th>Style/Language</th>
+            <th>Ground Truth</th>
+            <th>Sylber 2.0 Resynthesis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plain</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/plain-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/plain-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Angry</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/angry-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/angry-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Singing</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/singing-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/singing-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Spanish</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/es-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/es-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>French</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/fr-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/fr-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Korean</strong></td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/ko-gt.wav" type="audio/wav">
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 150px;">
+                <source src="./static/audio/ko-resynthesis.wav" type="audio/wav">
+              </audio>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered"> <!-- Added has-text-centered here -->
+          <p>
+            Website template borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
